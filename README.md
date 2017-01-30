@@ -1,5 +1,5 @@
-# pa-budget-clock
-Counting down the days until PA has a budget. It would be like the number of days without a budget in huge letters, and then links below as to what it’s effects and context are (perhaps a curated list of news articles)
+# Days Without Data
+Counting up the days that federal Open Data sets have been unavailable.
 
 ## Running locally
 
@@ -19,5 +19,5 @@ Then open your web browser and navigate to http://localhost:4000
 
 ## Team
 
-[Connor Sites-Bowen](https://twitter.com/connorsb) with CodeForPittsburgh is localizing this for Pittsburgh.
-Check out the about page for information about the team who built this ChiHackNight Project. 
+[Connor Sites-Bowen](https://twitter.com/connorsb) with Code For Pittsburgh has totally repurposed this counter for a very different, national conversation.
+Check out the about page for information about the team who built this ChiHackNight Project.
