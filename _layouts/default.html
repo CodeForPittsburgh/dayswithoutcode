@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        
+        <title>Pennsylvania Budget Clock</title>
+        
+        <meta name="description" content="See how long Pennsylvania has until the new budget is due, and what you can do about it.">
+        <meta name="author" content="Open Pittsburgh & Chi Hack Night">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta property="og:site_name" content="Pennsylvania Budget Clock">
+        <meta property="og:title" content="Pennsylvania Budget Clock">
+        <meta property="og:type" content="website">
+        <meta property="og:description" content="See how long Pennsylvania has until the new budget is due, and what you can do about it.">
+        <meta property="og:url" content="http://pabudgetclock.com/">
+        <meta property="og:image" content="http://pabudgetclock.com/images/screengrab.jpg">
+
+
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@openpgh">
+        <meta name="twitter:creator" content="@openpgh">
+        <meta name="twitter:description" content="See how long Pennsylvania has until the new budget is due, and what you can do about it.">
+        <meta name="twitter:title" content="Pennsylvania Budget Clock">
+        <meta name="twitter:url" content="http://pabudgetclock.com/">
+        <meta name="twitter:image:src" content="http://pabudgetclock.com/images/screengrab.jpg">
+
+        
+        <link rel="stylesheet" href="css/custom.css">
+        <link rel="icon" type="image/png" href="favicon.png">
+
+        <link href='https://fonts.googleapis.com/css?family=Alegreya+Sans:400,800' rel='stylesheet' type='text/css'>
+
+
+    </head>
+    <body>
+        
+        {{content}}
+
+        <script src="js/jquery.min.js"></script>
+        <script src="js/moment.js"></script>
+        <script src="js/jquery.address.js"></script>
+        <script src="js/analytics_lib.js"></script>
+        <script type="text/javascript">
+
+            default_reason = {title: "The unstable budget process may cause Pennsylvania's credit to be downgraded.", source: "philly.com", url: "goo.gl/zrjYih"}
+
+            var reasons = [
+				{title: "The recently passed 2015-2016 budget pushes a $2 billion structural deficit onto the upcoming budget.", source: "Reading Eagle", url: "http://www.readingeagle.com/news/article/analysts-see-mess-in-pennsylvania-budget"},
+				{title: "The unstable budget process may cause Pennsylvania's credit to be downgraded.", source: "philly.com", url: "goo.gl/zrjYih"},
+				{title: "The current budget is not fully resolved, as the fiscal code, the document by which certain line items are further provisioned, was vetoed.", source: "NBC Philadelphia", url: "http://www.nbcphiladelphia.com/news/local/Wolf-Vetoes-Fiscal-Code-Bill-Related-to-Pennsylvania-Budget-373753241.html"}
+            ]
+            var indices = []
+            $.each(reasons, function( index, value ) {
+                indices.push(index);
+            });
+
+            var i = 0;
+
+			var clock = moment();
+            updateClock();
+
+            setInterval(function(){
+                updateClock();
+            }, 1000);
+			
+			
+
+            function updateClock(){
+                clock = moment("July 1 2016 00:00:00").subtract(moment());
+                clock.month("april"); // update manually, what a horrible hack sorry 
+				$("#months").html(clock.get('month'));
+                $("#days").html(clock.get('date'));
+                $("#hours").html(clock.get('hour'));
+                $("#minutes").html(clock.get('minute'));
+                $("#seconds").html(clock.get('second'));
+            }
+
+            function shuffle(o){
+                for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+                return o;
+            }
+
+            function renderReason(reason){
+                $("#reason").html(reason['title']+'<br /><span  class="small">Source: <a href="'+reason['url']+'" target="blank">' + reason['source'] + '</a></span>');
+            }
+
+
+            $('#do-something').hide();
+
+            if($.address.parameter("reason") && parseInt($.address.parameter("reason"))<reasons.length){
+                renderReason(reasons[parseInt($.address.parameter("reason"))])
+            }
+            else{
+                renderReason(default_reason)
+            }
+
+
+            shuffle(indices);
+            $('#more').on('click', function(e){
+
+                $.address.parameter('reason', indices[i]);
+                $('#reason').fadeOut().delay(200).fadeIn()
+                window.setTimeout(function () {
+                    renderReason(reasons[indices[i]]);
+                    i = (i+1) % reasons.length;
+                    }, 500);
+
+            })
+
+            $('#call-to-action-btn').on('click', function(e){
+                $('#do-something').slideDown(function(){ $('html, body').animate({
+                        scrollTop: $("#do-something").offset().top
+                     }, 500); });
+                
+                _trackClickEventWithGA('Click', 'Do something', 'Do something')
+            })
+
+
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,8 @@
+port:  5000
+markdown: kramdown
+name: Pennsylvania Budget Clock
+url: http://pabudgetclock.com
+title: Pennsylvania Budget Clock
+description: "Pennsylvania's new budget is due in"
+encoding: utf-8
+timezone: America/Chicago
