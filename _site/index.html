@@ -36,7 +36,65 @@
     </head>
     <body>
         
-        {{content}}
+        <div class="header">
+    <p class="h2 no-pad-bottom">Federal open data sets have been unavailable for</p>
+    <div id="clock">
+        <!-- ><div>
+            <span id="months"></span>
+            <div class="small">Months</div>
+        </div> -->
+        <div> 
+            <span id="days"></span>
+            <div class="small">Days</div>
+        </div>
+        <div>
+            <span id="hours"></span>
+            <div class="small">Hours</div>
+        </div>
+        <div>
+            <span id="minutes"></span>
+            <div class="small">Minutes</div>
+        </div>
+        <div>
+            <span id="seconds"></span>
+            <div class="small">Seconds</div>
+        </div>
+    </div>
+</div>
+
+<div class='content'>
+    <p class="h2">So, why does this matter?</p>
+    <div id="reasons">
+        <p id="reason">
+        </p>
+    </div>
+    <br/>
+    
+    
+    <button class="btn" id="more">
+        Give me another reason
+    </button>
+    <button class="btn" id="call-to-action-btn">
+        Ok yinz, this is crazy
+    </button>
+    <br/><br/>
+</div>
+
+
+<div id="do-something">
+    <p class="h2">Don't just read &mdash; here are some ways you can <i>act</i> :</p>
+
+    <!-- This is where call to actions go!  -->
+</div>
+
+<div class="footer">
+
+    <br/>
+    <p><a href="about.html#why">Why is this happening?</a></p>
+    <p><a href="about.html#team">Clock proudly built by volunteers at Chi Hack Night. Adapted by Code for Pittsburgh.</a></p>
+    <br/>
+</div>
+
 
         <script src="js/jquery.min.js"></script>
         <script src="js/moment.js"></script>
