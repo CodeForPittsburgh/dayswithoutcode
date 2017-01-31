@@ -68,9 +68,9 @@
 			
 
             function updateClock(){
-                clock = moment().subtract(moment("Jan 30 2017 00:00:00"));
+                clock = moment(moment().diff(moment("Jan 30 2017 10:00:00 EST")));
 				$("#months").html(clock.get('month'));
-                $("#days").html(clock.get('date'));
+                $("#days").html(clock.get('date')-1);
                 $("#hours").html(clock.get('hour'));
                 $("#minutes").html(clock.get('minute'));
                 $("#seconds").html(clock.get('second'));
