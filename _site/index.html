@@ -37,7 +37,9 @@
     <body>
         
         <div class="header">
-    <p class="h2 no-pad-bottom">THIS ISN'T REAL YET Federal open data sets have been unavailable for</p>
+    <p class="h2 no-pad-bottom">Previously available <a href="http://opendatahandbook.org/guide/en/what-is-open-data/">open public data</a> has gone offline.</p>
+	<p>Animal Welfare Act and Horse Protection Act <a href="https://acis.aphis.edc.usda.gov/ords/f?p=116:1:16895283308624:::::">Compliance Information</a> has been missing from the United States Department of Agriculture Animal and Plant Health Inspection Service <a href="https://www.aphis.usda.gov/aphis/resources/foia/ct_foia_reading_room">website</a> for:</p>
+	
     <div id="clock">
         <div>
             <span id="months"></span>
@@ -83,15 +85,36 @@
 
 <div id="do-something">
     <p class="h2">Don't just read &mdash; here are some ways you can <i>act</i> :</p>
-	There's all kinds of stuff
-
-    <!-- This is where call to actions go!  -->
+	<p><strong><a href="https://callyourrep.co/callscript?id=DZUJxh9axapLNMuDvVCrVgGx">Call Your Representatives!</a></strong></p>
+	<p><strong>Call the <a href="http://appropriations.house.gov/about/members/agricultureruralfda.htm">members of the Agriculture Subcommittee</a> of the House Committee on Appropriations, which oversees the USDA.</strong></p>
+	<div id="callscript">
+	<p><strong>Call Script:</strong></p>
+	<p>Hello! My name is (name). I&rsquo;m a (constituent, concerned citizen, research scientist) and I am concerned by the removal of the Animal Welfare Act and Horse Protection Act Compliance Information from the USDA&rsquo;s website.<br>
+		Though these are but two datasets, I fear that more and more publicly available information may be removed at the behest of the new administration.<br>
+		To paraphrase Julia Wapner, &quot;The knowledge that the government collected is our knowledge, and as a country, we have a right to it.”<br>
+	As James Madison wrote, &quot;Knowledge will forever govern ignorance; and a people who mean to be their own governors must arm themselves with the power which knowledge gives.”<br>
+	I&rsquo;d like to see the aforementioned datasets returned to open public access, and I&rsquo;d like to know what your plan is moving forward to protect and safeguard the federal datasets still available.</p>
+	</div>
+	<br>
+	<br>
+	<p><strong> Protect more data,</strong> by helping:
+		<li><a href="https://www.datarefuge.org/about">DataRefuge.org</a>
+		<li><a href="https://envirodatagov.org/">The Environmental Data &amp; Governance Initiative</a>
+		<li><a href="https://blog.archive.org/2017/01/25/see-something-save-something/">archive.org</a>
+		<li><a href="https://projectarcc.org/">ProjectARCC</a>
+		<li>and other projects.</p>
+	<p><strong>Host a <a href="http://www.ppehlab.org/datarescue/">DataRescue</a> event</strong> and rescue data yourself! </p>
+	<p><strong>Are you</strong> an academic, journalist, student, business, nonprofit, government worker, or other stakeholder? <strong>Follow</strong> <a href="https://sites.google.com/site/carnegiemellonprojectamber/home">Project Amber</a> and answer their periodic stakeholder polls.</p>
+	<p>Spread the word via social media, using the hashtag <strong>#dayswithoutdata</strong></p>
+	<br>
 </div>
+
+
 
 <div class="footer">
 
     <br/>
-    <p><a href="about.html#why">Why is this happening?</a></p>
+    <!-- <p><a href="about.html#why">Why is this happening?</a></p> -->
     <p><a href="about.html#team">Clock proudly built by volunteers at Chi Hack Night. Adapted by Code for Pittsburgh.</a></p>
     <br/>
 </div>
@@ -103,11 +126,16 @@
         <script src="js/analytics_lib.js"></script>
         <script type="text/javascript">
 
-            default_reason = {title: "Title of First Reason.", source: "google.com", url: "http://www.google.com"}
+            default_reason = {title: "The missing information included annual reports from both scientific and breeding facilities for non-farm animals listing animal populations and use, as well as individual inspection reports made by USDA inspectors about those facilities.", source: "The Dodo", url: "https://www.thedodo.com/usda-animal-welfare-information-removed-2236124400.html"}
 
             var reasons = [
 			
-				{title: "Title of Second Reason.", source: "second source", url: "url.com"}, <!-- no comma after the last one -->
+				{title: "These reports were an important public tool to combat mistreatment of research animals, as well as puppy mills, circuses, and other groups who directly monetize animals.", source: "CNN", url: "http://www.cnn.com/2017/02/04/us/usda-animal-abuse-database/index.html"},
+				{title: "“The knowledge that the government collected is our knowledge,” volunteer Julia Wapner said. “As a country, we have a right to it.”", source: "Newsweek", url:"http://www.newsweek.com/volunteers-fight-trump-attack-science-safeguard-data-552827"},
+				{title: "This has happened before, with Fisheries and Oceans data in Canada, which in 2014 was purged without input from the researchers who use it. 'It certainly suggests a lack of respect for scientific information.' - John Reynolds, professor of aquatic ecology at Simon Fraser University", source: "The Star", url:"https://www.thestar.com/news/canada/2014/01/12/thats_no_way_to_treat_a_library_scientists_say.html"},
+				{title: "The potential for data to disappear is so high, climate scientists are replicating both raw data and data display methods to non-government servers, in case the official data sets are taken down.", source: "WIRED", url:"https://www.wired.com/2017/01/rogue-scientists-race-save-climate-data-trump/"},
+				// {title: "", source: "", url:""},
+				// no comma after the last one
             ]
 			
             var indices = []
@@ -127,7 +155,7 @@
 			
 
             function updateClock(){
-                clock = moment(moment().diff(moment("Jan 30 2017 10:00:00 EST")));
+                clock = moment(moment().diff(moment("Feb 3 2017 12:00:00 EST")));
 				$("#months").html(clock.get('month'));
                 $("#days").html(clock.get('date')-1);
                 $("#hours").html(clock.get('hour'));
