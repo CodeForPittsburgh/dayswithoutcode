@@ -191,7 +191,7 @@ button:hover, button:active{
 		margin-top: 4px;
 	}
 	#reason {
-		font-size: 20px;
+		font-size: 10px;
 	}
 	.small{
 		font-size: 14px;
@@ -224,6 +224,7 @@ button:hover, button:active{
 		margin-left: 0px;
 		margin-right: 0px;
 		font-size: 10px;
+		height: 200px;
 	}
 
 
