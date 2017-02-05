@@ -22,8 +22,9 @@ Second Reason |	Soccer | www.soccer.com
 
 Don't just read, here are some ways you can *act*:
 
-ACTIONS
+PLACEHOLDER ACTIONS
 Legislator Calls to reps on committees related to the data or the users of the data
+	Sample phone script for those legislators
 Link to hosted-elsewhere copies of the dataset
 are there data request forms that that department has?
 Is there a newsletter of an organization related to this, which people can sign up for?
